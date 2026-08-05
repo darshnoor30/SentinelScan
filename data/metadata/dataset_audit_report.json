@@ -1,0 +1,52 @@
+{
+    "total_samples": 1086789,
+    "columns": [
+        "url",
+        "label",
+        "source",
+        "domain"
+    ],
+    "label_distribution": {
+        "0": 999998,
+        "1": 86791
+    },
+    "source_distribution": {
+        "tranco": 999998,
+        "phishtank": 64789,
+        "urlhaus": 21702,
+        "openphish": 300
+    },
+    "missing_values": {
+        "url": 0,
+        "label": 0,
+        "source": 0,
+        "domain": 0
+    },
+    "duplicate_urls": 0,
+    "duplicate_domains": 47399,
+    "unique_urls": 1086789,
+    "unique_domains": 1039390,
+    "average_url_length": 24.677827066707522,
+    "suspicious_url_examples": [
+        "https://www.roblox.com.ml/games/15884350761/update-bloody-ragdoll-engine-remastered?privateserverlinkcode=145044208057261336158114392125",
+        "https://www.roblox.com.et/games/114549747848211/update-just-tornadoes-2?privateserverlinkcode=19696371439770339491581196338406&game_id=114549747848211&game_name=update-just-tornadoes-2",
+        "https://dashboardsecure-wfcom-webauth-overview.github.io/dashboardsecure-wf-comt/",
+        "https://instagram-cmd.github.io/accounts",
+        "http://phemayameltahub.site/wp-includes/pomo/ini_db-update.php",
+        "https://vww-roblox.cam/login?returnurl=1359609853",
+        "http://curryprinting.neraik.com/home/verify-access",
+        "https://unknown9672.github.io/insta-login/",
+        "https://manageaccountssignappsaeqhmcv8whd.edryh357ysdfhdfhd.com/?auth_max_open=signin&desktop_access=8d7cac5b7747fc4f406f086d5fe32b6879dfde7d5afa7f17f74095578e12fab02219ce0bdf622491c405409e1bfec58d3427",
+        "https://3cud-je09-uln1.accounting-coralridgetowerssouth-com-s-account.workers.dev/1406c",
+        "https://zero2oneaccounting.com.au/service26/cssoe/cssgorr/geburtsdatum.html",
+        "https://m.fyqn9810la0y.com:9229/account/reg?code=31515",
+        "https://dashboardsecure-wfcom-webauth-overview.github.io/dashboardsigninsecurewellsfarcom/",
+        "https://3cud-je09-uln1.accounting-coralridgetowerssouth-com-s-account.workers.dev/1406c...",
+        "https://dashboardsecure-wfcom-webauth-overview.github.io/dashboardsecurewf-com/",
+        "https://lucklist.shop/login",
+        "https://uikks.xyz/login",
+        "https://ncuyw.top/login",
+        "https://www.facebook-login-pages.blogspot.com/",
+        "http://www.v0-coinbase-login-page.vercel.app/"
+    ]
+}

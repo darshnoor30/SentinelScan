@@ -1,0 +1,35 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+
+# Logs
+logs/
+*.log
+
+# Models
+models_saved/
+*.pkl
+
+# Database
+*.db
+
+# Data
+data/raw/
+data/processed/features/
+
+# React
+frontend/node_modules/
+frontend/dist/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

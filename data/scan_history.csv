@@ -1,0 +1,5 @@
+timestamp,url,prediction,confidence,risk_score,severity
+2026-07-12 12:08:55,https://google.com,LEGITIMATE,100.0,5,LOW
+2026-07-12 17:48:36,https://paypal-login-security-check.com,LEGITIMATE,66.5,60,HIGH
+2026-07-12 17:56:46,https://paypal-login-security-check.com,LEGITIMATE,66.5,60,HIGH
+2026-07-13 15:17:42,https://google.com,LEGITIMATE,100.0,0,LOW
