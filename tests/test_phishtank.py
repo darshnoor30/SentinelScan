@@ -1,6 +1,11 @@
+import pytest
+
 from src.threat_intelligence.phishtank import (
     extract_phishtank_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

@@ -1,5 +1,6 @@
 # Python
 venv/
+.venv/
 __pycache__/
 *.pyc
 *.pyo
@@ -21,11 +22,19 @@ models_saved/
 
 # Data
 data/raw/
-data/processed/features/
+data/processed/*.csv
+!data/processed/train_sample.csv
+data/cache/*.db
 
 # React
 frontend/node_modules/
 frontend/dist/
+
+# Test and tooling output
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # VS Code
 .vscode/

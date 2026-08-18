@@ -6,7 +6,7 @@ const API_BASE_URL =
 
 const API_KEY =
     import.meta.env.VITE_SENTINELSCAN_API_KEY ||
-    "sentinelscan-secret-key";
+    "sentinelscan-development-key";
 
 const api = axios.create({
     baseURL: API_BASE_URL,

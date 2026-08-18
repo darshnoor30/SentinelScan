@@ -1,6 +1,11 @@
+import pytest
+
 from src.threat_intelligence.safe_browsing import (
     extract_safe_browsing_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

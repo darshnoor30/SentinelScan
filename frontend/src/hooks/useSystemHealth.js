@@ -154,8 +154,10 @@ export default function useSystemHealth() {
     useEffect(() => {
         mountedRef.current = true;
 
-        loadHealth({
-            background: false
+        queueMicrotask(() => {
+            loadHealth({
+                background: false
+            });
         });
 
         const intervalId =
