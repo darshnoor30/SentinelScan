@@ -474,8 +474,10 @@ export default function useDashboard() {
     useEffect(() => {
         mountedRef.current = true;
 
-        loadDashboard({
-            background: false
+        queueMicrotask(() => {
+            loadDashboard({
+                background: false
+            });
         });
 
         return () => {

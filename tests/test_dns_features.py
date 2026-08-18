@@ -1,6 +1,11 @@
+import pytest
+
 from src.feature_engineering.dns_features import (
     extract_dns_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

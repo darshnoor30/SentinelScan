@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ENVIRONMENT: development
+      SENTINELSCAN_API_KEY: sentinelscan-development-key
+      DATABASE_URL: sqlite:////app/data/sentinelscan.db
+      FRONTEND_URLS: http://localhost:8080
+    ports:
+      - "8001:8001"
+    volumes:
+      - sentinelscan-data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:8001
+        VITE_SENTINELSCAN_API_KEY: sentinelscan-development-key
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+
+volumes:
+  sentinelscan-data:

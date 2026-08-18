@@ -415,7 +415,9 @@ function History() {
         document.title =
             "SentinelScan | Scan History";
 
-        loadHistory();
+        queueMicrotask(() => {
+            loadHistory();
+        });
 
         return () => {
             mountedRef.current = false;
@@ -424,7 +426,9 @@ function History() {
     }, [loadHistory]);
 
     useEffect(() => {
-        setCurrentPage(1);
+        queueMicrotask(() => {
+            setCurrentPage(1);
+        });
     }, [
         search,
         filter,
@@ -628,7 +632,9 @@ function History() {
 
     useEffect(() => {
         if (currentPage > totalPages) {
-            setCurrentPage(totalPages);
+            queueMicrotask(() => {
+                setCurrentPage(totalPages);
+            });
         }
     }, [currentPage, totalPages]);
 

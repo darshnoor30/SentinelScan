@@ -1,4 +1,4 @@
-import React, {
+import {
     Suspense,
     lazy
 } from "react";
@@ -181,8 +181,8 @@ function App() {
             />
 
             <ErrorBoundary>
-    <AppRoutes />
-</ErrorBoundary>
+                <AppRoutes />
+            </ErrorBoundary>
         </BrowserRouter>
     );
 }

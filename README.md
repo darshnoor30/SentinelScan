@@ -13,7 +13,8 @@ SentinelScan combines machine learning, URL feature engineering, domain intellig
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
 ![Machine Learning](https://img.shields.io/badge/ML-Random%20Forest-orange)
 ![Database](https://img.shields.io/badge/Database-SQLite%20%7C%20PostgreSQL-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![CI](https://github.com/darshnoor30/SentinelScan/actions/workflows/ci.yml/badge.svg)](https://github.com/darshnoor30/SentinelScan/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 </div>
 
@@ -36,6 +37,9 @@ A submitted URL is analysed using:
 - Explainable detection reasons
 
 The final result includes a prediction, confidence score, risk score, severity level, threat-intelligence summary, and human-readable explanations.
+
+> SentinelScan is a defensive portfolio and research project. Its model output is
+> probabilistic and must support—not replace—analyst judgment.
 
 ---
 
@@ -234,8 +238,6 @@ The final verdict is not based only on the raw machine-learning output. Sentinel
 
 ![Swagger API](assets/swagger.png)
 
-> Screenshots will appear after the corresponding image files are added inside the `assets` directory.
-
 ---
 
 ## Technology Stack
@@ -264,12 +266,12 @@ The final verdict is not based only on the raw machine-learning output. Sentinel
 - Scikit-learn
 - Random Forest
 - Logistic Regression
-- XGBoost
-- LightGBM
-- CatBoost
 - Pandas
 - NumPy
 - Joblib
+
+XGBoost, LightGBM, CatBoost, SHAP, and experiment visualisation packages are
+available through the optional `requirements-ml.txt` environment.
 
 ### Security Intelligence
 
@@ -333,6 +335,11 @@ SentinelScan/
 ├── assets/
 ├── .env.example
 ├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── pyproject.toml
+├── requirements-dev.txt
+├── requirements-ml.txt
 ├── requirements.txt
 └── README.md
 ```
@@ -364,7 +371,7 @@ SentinelScan/
 Install:
 
 - Python 3.11
-- Node.js 18 or later
+- Node.js 22
 - Git
 
 ### 1. Clone the repository
@@ -444,7 +451,7 @@ Open another terminal:
 
 ```bash
 cd frontend
-npm install
+npm ci
 ```
 
 ### 7. Create the frontend environment file
@@ -475,6 +482,44 @@ Open:
 ```text
 http://localhost:5173
 ```
+
+---
+
+## Run with Docker
+
+The repository includes working backend and frontend container definitions for a
+local demonstration:
+
+```bash
+docker compose up --build
+```
+
+Open the React application at `http://localhost:8080`, the API at
+`http://localhost:8001`, or Swagger at `http://localhost:8001/docs`.
+The compose defaults are development-only; replace the API key and CORS origins
+before any public deployment.
+
+---
+
+## Verification
+
+Routine CI deliberately excludes checks that contact DNS, WHOIS, TLS, or reputation
+providers. Those tests remain available through the `integration` marker.
+
+```bash
+python -m pip install -r requirements-dev.txt
+ruff check src database tests
+python -m compileall -q src database
+pytest -m "not integration"
+
+cd frontend
+npm ci
+npm run lint
+npm run build
+```
+
+See [the methodology](docs/methodology.md) for evaluation boundaries and
+[the architecture guide](docs/architecture.md) for trust boundaries.
 
 ---
 
@@ -533,7 +578,7 @@ Production improvements could include:
 
 ---
 
-## Deployment Architecture
+## Deployment Blueprint
 
 ```text
 React Frontend
@@ -551,7 +596,8 @@ Render Web Service
 PostgreSQL Database
 ```
 
-Deployment links will be added after production deployment.
+The checked-in deployment configuration currently targets local Docker. A public
+deployment has not been claimed or linked.
 
 ```text
 Frontend: Coming soon
@@ -600,7 +646,7 @@ Swagger:  Coming soon
 - SOC and SIEM integration
 - User accounts and role-based access
 - Automated alert notifications
-- Docker and Kubernetes deployment
+- Kubernetes deployment
 - Continuous model retraining
 - PostgreSQL production database
 - Cloud-based monitoring and logging
@@ -633,9 +679,8 @@ It should not be treated as the only security control for high-risk or productio
 
 ## License
 
-This project is intended for educational and academic use.
-
-Add an open-source license before permitting unrestricted redistribution.
+Released under the [MIT License](LICENSE). See [SECURITY.md](SECURITY.md) for
+responsible disclosure and deployment guidance.
 
 ---
 

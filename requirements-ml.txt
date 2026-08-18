@@ -1,0 +1,9 @@
+# Optional dependencies for model experiments and explainability.
+-r requirements.txt
+catboost>=1.2,<2
+lightgbm>=4.5,<5
+xgboost>=3,<4
+shap>=0.48,<1
+matplotlib>=3.9,<4
+seaborn>=0.13,<1
+tqdm>=4.67,<5

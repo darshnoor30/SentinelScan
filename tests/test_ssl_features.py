@@ -1,6 +1,11 @@
+import pytest
+
 from src.feature_engineering.ssl_features import (
     extract_ssl_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 
@@ -37,5 +42,4 @@ def test_ssl_features():
     "ssl_valid"
     in features
 )
-
 

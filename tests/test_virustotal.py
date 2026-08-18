@@ -1,6 +1,11 @@
+import pytest
+
 from src.threat_intelligence.virustotal import (
     extract_virustotal_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

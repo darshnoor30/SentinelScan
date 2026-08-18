@@ -1,6 +1,11 @@
+import pytest
+
 from src.feature_engineering.domain_features import (
     extract_domain_features
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

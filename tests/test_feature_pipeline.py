@@ -1,3 +1,5 @@
+import pytest
+
 from src.feature_engineering.feature_pipeline import (
     extract_all_features
 )
@@ -6,6 +8,9 @@ from src.feature_engineering.feature_pipeline import (
 from src.feature_engineering.feature_schema import (
     ALL_FEATURES
 )
+
+
+pytestmark = pytest.mark.integration
 
 
 

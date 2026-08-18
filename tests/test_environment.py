@@ -1,23 +1,16 @@
-"""
-SentinelScan Environment Test
-
-Checks whether all major dependencies
-are installed correctly.
-"""
+"""Verify only the dependencies required by the deployed application."""
 
 
-def test_environment():
-
-    import pandas
+def test_runtime_environment() -> None:
+    import fastapi
+    import joblib
     import numpy
+    import pandas
+    import pydantic
     import sklearn
-    import xgboost
-    import lightgbm
-    import shap
+    import sqlalchemy
 
-    assert pandas.__version__
-    assert numpy.__version__
-    assert sklearn.__version__
-    assert xgboost.__version__
-    assert lightgbm.__version__
-    assert shap.__version__
+    assert all(
+        package.__version__
+        for package in (fastapi, joblib, numpy, pandas, pydantic, sklearn, sqlalchemy)
+    )
