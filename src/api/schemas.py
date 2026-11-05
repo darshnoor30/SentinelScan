@@ -227,12 +227,9 @@ class URLScanRequest(StrictRequestModel):
             )
 
             if (
-                address.is_private
-                or address.is_loopback
-                or address.is_link_local
+                not address.is_global
                 or address.is_multicast
                 or address.is_reserved
-                or address.is_unspecified
             ):
                 raise ValueError(
                     "Private, local, reserved, and non-public IP addresses "
